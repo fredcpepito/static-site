@@ -1,0 +1,49 @@
+$  yarn global add react-static
+$  react-static create
+$  cd static-site
+$  code .
+$  yarn start
+
+  Using React-Static 
+  https://www.youtube.com/watch?v=OqbJ5swVpDQ
+
+react-static is pretty easy to use. First, you’ll need to install Node.JS and NPM on your machine. react-static is simply an NPM package, which you can install globally:
+
+$ npm i -g react-static
+
+Then, you can run the project creation tool:
+
+$ react-static create
+
+Give your project a name, and select which template to use. The “basic” option is 
+standard JS, but there is also a TypeScript variant, which plenty of people prefer 
+over standard JavaScript for larger projects. If you’re more familiar with 
+statically typed languages, choose TypeScript, otherwise, select “basic.”
+
+Name your project, select template.
+
+This will take a second to install some NPM dependencies and set up the project. 
+The main files are in /src/, with index.jsx being the very root of the app, 
+and App.jsx being the 
+primary router that controls which pages the user sees. In /dist/, you’ll fine 
+the output of the build (after you run it) that you’ll put on your web server.
+
+
+In App.jsx, you’ll find the start of the rendering. The Router component renders 
+out each page in /src/pages/, 
+depending on the URL. The configuration for this is handled in static.config.js.
+
+
+You can actually have dynamic routes in your application—any route configured with 
+the <Dynamic /> component will not be affected by the static renderer.
+
+To launch the app, you can start the development server:
+
+npm run start
+
+To run a build to deploy to your web server, do run build:
+
+npm run build
+
+The outputted files will be in /dist/. You’ll, of course, find each HTML page to 
+be rendered out in advance, with any dynamic pages still loading React binaries.
